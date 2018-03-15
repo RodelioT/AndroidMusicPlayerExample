@@ -28,6 +28,17 @@ public class MainActivity extends AppCompatActivity {
 
         // Get all songs and their data
         getSongList();
+
+        // Sorts the songList alphabetically
+        Collections.sort(songList, new Comparator<Song>(){
+            public int compare(Song a, Song b){
+                return a.getTitle().compareTo(b.getTitle());
+            }
+        });
+
+        // Creates a new adapter and sets it on the ListView
+        SongAdapter songAdt = new SongAdapter(this, songList);
+        songView.setAdapter(songAdt);
     }
 
     // Method to retrieve song metadata
@@ -56,22 +67,4 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public class Song {
-        private long id;
-        private String title;
-        private String artist;
-        // You can add more song metadata here if you wish
-
-        // Constructor method
-        public Song(long songID, String songTitle, String songArtist) {
-            id=songID;
-            title=songTitle;
-            artist=songArtist;
-        }
-
-        // GET methods for the parameters
-        public long getID(){return id;}
-        public String getTitle(){return title;}
-        public String getArtist(){return artist;}
-    }
 }
