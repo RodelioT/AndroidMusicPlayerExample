@@ -2,8 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ca.google.musicplayerexample">
 
+    <!--Requires read and write permissions, and wake_lock, which allows music playback when the phone goes to sleep-->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:allowBackup="true"
@@ -23,10 +25,9 @@
             </intent-filter>
         </activity>
 
+        <!--MusicService is required (make sure the package reflects your project's)-->
         <service android:name="ca.google.musicplayerexample.MusicService" />
 
     </application>
-
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
 </manifest>

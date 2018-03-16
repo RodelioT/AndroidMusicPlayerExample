@@ -13,6 +13,7 @@ import android.util.Log;
 
 import java.util.ArrayList;
 
+// Handles the music playback
 public class MusicService extends Service implements
         MediaPlayer.OnPreparedListener,
         MediaPlayer.OnErrorListener,
@@ -24,10 +25,16 @@ public class MusicService extends Service implements
     private int songPosn; // Song index/position
     private final IBinder musicBind = new MusicBinder();
 
+    // Occurs when the MusicService is created
     public void onCreate(){
+        super.onCreate(); // Creates the service
+        songPosn=0; // Initialize position
+        player = new MediaPlayer(); // Create the player
+
         initMusicPlayer();
     }
 
+    // Initialize the music player
     public void initMusicPlayer(){
         // Configuring music player properties
         player.setWakeMode(getApplicationContext(), PowerManager.PARTIAL_WAKE_LOCK); //PARTIAL_WAKE_LOCK allows music playback to continue when the device goes to sleep

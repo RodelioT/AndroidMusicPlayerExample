@@ -150,4 +150,6 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 
-// In-depth tutorial at => https://code.tutsplus.com/tutorials/create-a-music-player-on-android-project-setup--mobile-22764
+// In-depth tutorial at => https://code.tutsplus.com/tutorials/create-a-music-player-on-android-project-setup--mobile-22764 (loading/displaying all audio files on device)
+//          second part => https://code.tutsplus.com/tutorials/create-a-music-player-on-android-song-playback--mobile-22778 (music playback)
+//           third part => https://code.tutsplus.com/tutorials/create-a-music-player-on-android-user-controls--mobile-22787 (refined music actions, music controls, and notification controls)

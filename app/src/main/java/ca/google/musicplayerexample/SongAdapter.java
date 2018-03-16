@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+// Adapter to serve as a bridge between the audio files and the View
 public class SongAdapter extends BaseAdapter {
 
     private ArrayList<Song> songs;
@@ -44,18 +45,18 @@ public class SongAdapter extends BaseAdapter {
         //map to song layout
         LinearLayout songLayout = (LinearLayout)songInf.inflate(R.layout.song, parent, false);
 
-        //get title and artist views
+        // Get title and artist views
         TextView songView = songLayout.findViewById(R.id.song_title);
         TextView artistView = songLayout.findViewById(R.id.song_artist);
 
-        //get song using position
+        // Get song using position
         Song currSong = songs.get(position);
 
-        //get title and artist strings
+        // Get title and artist strings
         songView.setText(currSong.getTitle());
         artistView.setText(currSong.getArtist());
 
-        //set position as tag
+        // Set index position as the tag
         songLayout.setTag(position);
 
         return songLayout;

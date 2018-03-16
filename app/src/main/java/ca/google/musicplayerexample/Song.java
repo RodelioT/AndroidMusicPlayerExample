@@ -1,6 +1,8 @@
 package ca.google.musicplayerexample;
 
+// Represents a Song object
 public class Song {
+    // Parameters for a song
     private long id;
     private String title;
     private String artist;
