@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
 
-        <!--<service android:name="ca.google.musicplayerexample.MusicService" />-->
+        <service android:name="ca.google.musicplayerexample.MusicService" />
 
     </application>
 
