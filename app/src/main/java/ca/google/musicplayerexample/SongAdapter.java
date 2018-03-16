@@ -42,11 +42,11 @@ public class SongAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         //map to song layout
-        LinearLayout songLay = (LinearLayout)songInf.inflate(R.layout.song, parent, false);
+        LinearLayout songLayout = (LinearLayout)songInf.inflate(R.layout.song, parent, false);
 
         //get title and artist views
-        TextView songView = (TextView)songLay.findViewById(R.id.song_title);
-        TextView artistView = (TextView)songLay.findViewById(R.id.song_artist);
+        TextView songView = songLayout.findViewById(R.id.song_title);
+        TextView artistView = songLayout.findViewById(R.id.song_artist);
 
         //get song using position
         Song currSong = songs.get(position);
@@ -56,8 +56,8 @@ public class SongAdapter extends BaseAdapter {
         artistView.setText(currSong.getArtist());
 
         //set position as tag
-        songLay.setTag(position);
+        songLayout.setTag(position);
 
-        return songLay;
+        return songLayout;
     }
 }
